@@ -49,6 +49,11 @@ pub fn main() !void {
     }
     const arg1: [*:0]u8 = args[1];
 
+    if (std.mem.eql(u8, convertArgToConstU8(arg1), "help") or std.mem.eql(u8, convertArgToConstU8(arg1), "-h") or std.mem.eql(u8, convertArgToConstU8(arg1), "--help")) {
+        std.debug.print("{s}\n\n{s}\n\n{s}\n\n{s}\n\n{s}\n", .{ "Usage: zig_alarm <int> [unit]", "Commands: ", "  int     Integer you want to measure (default: seconds)\n  unit    unit for integer such as sec, min, hrs, day", "General Options:", "  -h, --help       Print command-specific usage" });
+        return;
+    }
+
     const n: u64 = convertArgToU64(arg1);
     std.debug.print("Start Timer {d}{s}\n", .{ n, unit });
     const seconds = convertSeconds(n, unit);
