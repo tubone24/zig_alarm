@@ -59,21 +59,21 @@ pub fn main() !void {
 }
 
 test "convertSeconds: sec to sec" {
-    const actual:u64 = 20;
+    const actual: u64 = 20;
     try std.testing.expect(convertSeconds(actual, "s") == 20);
 }
 
 test "convertSeconds: min to sec" {
-    const actual:u64 = 20;
+    const actual: u64 = 20;
     try std.testing.expect(convertSeconds(actual, "m") == 1200);
 }
 
 test "convertSeconds: hrs to sec" {
-    const actual:u64 = 20;
+    const actual: u64 = 20;
     try std.testing.expect(convertSeconds(actual, "h") == 72000);
 }
 
 test "convertSeconds: day to sec" {
-    const actual:u64 = 20;
+    const actual: u64 = 20;
     try std.testing.expect(convertSeconds(actual, "d") == 1728000);
 }
