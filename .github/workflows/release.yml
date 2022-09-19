@@ -43,5 +43,5 @@ jobs:
         with:
           upload_url: ${{ steps.update_release.outputs.upload_url }}
           asset_path: ./zig-out/bin/zig_alarm${{ matrix.asset_name_suffix }}
-          asset_name: zig_alarm_$_${{ runner.os }}_${{ steps.get_version.outputs.VERSION }}${{ matrix.asset_name_suffix }}
+          asset_name: zig_alarm_${{ runner.os }}_${{ steps.get_version.outputs.VERSION }}${{ matrix.asset_name_suffix }}
           asset_content_type: ${{ matrix.asset_content_type }}
