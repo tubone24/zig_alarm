@@ -13,8 +13,8 @@ jobs:
         with:
           version: 0.9.1
       - name: test
-        if: ${{matrix.os}} != windows-latest
         run: zig test src/*.zig
+        shell: bash
   lint:
     runs-on: ubuntu-latest
     steps:
