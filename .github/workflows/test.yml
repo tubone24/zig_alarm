@@ -1,3 +1,4 @@
+name: test
 on: push
 
 jobs:
@@ -11,7 +12,9 @@ jobs:
       - uses: goto-bus-stop/setup-zig@v1
         with:
           version: 0.9.1
-      - run: zig test src/*.zig
+        name: test
+        if: matrix.os != windows-latest
+        run: zig test src/*.zig
   lint:
     runs-on: ubuntu-latest
     steps:
